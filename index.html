@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Calculation of subnet parameters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="wrap">
+        <h1>Network Calculator</h1>
+        <div class="control">
+            <button class="pool" onmousedown="dt.ext.incIP()">&#11014;</button>
+            <button class="netw" onmousedown="dt.ext.incNetSize()">&#11014;</button>
+        </div>
+        <form>
+            <input type="number" id="ip3" value="192" maxlength="3"> .
+            <input type="number" id="ip2" value="168" maxlength="3"> .
+            <input type="number" id="ip1" value="0" maxlength="3"> .
+            <input type="number" id="ip0" value="1" maxlength="3"> /
+            <input type="number" id="netSize" value="24" maxlength="2">
+        </form>
+        <div class="control">
+            <button class="pool" onmousedown="dt.ext.decIP()">&#11015;</button>
+            <button class="netw" onmousedown="dt.ext.decNetSize()">&#11015;</button>
+        </div>
+        <hr>
+        <table>
+            <tr>
+                <td>Network</td>
+                <td id="outNetAddr">192.168.0.0/24</td>
+            </tr>
+            <tr>
+                <td>Mask</td>
+                <td id="outNetMask">255.255.255.0</td>
+            </tr>
+            <tr>
+                <td>From</td>
+                <td id="outAddrFrom">192.168.0.0</td>
+            </tr>
+            <tr>
+                <td>To</td>
+                <td id="outAddrTo">192.168.0.255</td>
+            </tr>
+            <tr>
+                <td>Pool</td>
+                <td id="outCountHosts">256</td>
+            </tr>
+        </table>
+    </div>
+    <script defer src="script.js"></script>
+</body>
+</html>
