@@ -3,18 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Calculation of subnet parameters</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 </head>
 <body>
     <div class="wrap">
         <h1>Network Calculator</h1>
         <div class="control">
-            <button class="pool" onmousedown="dt.ext.incIP()">&#11014;</button>
-            <button class="netw" onmousedown="dt.ext.incNetSize()">&#11014;</button>
+            <button class="pool" onmousedown="dt.ext.incIP()">&#9650;</button>
+            <button class="netw" onmousedown="dt.ext.incNetSize()">&#9650;</button>
         </div>
         <form>
             <input type="number" id="ip3" value="192" maxlength="3"> .
@@ -24,8 +21,8 @@
             <input type="number" id="netSize" value="24" maxlength="2">
         </form>
         <div class="control">
-            <button class="pool" onmousedown="dt.ext.decIP()">&#11015;</button>
-            <button class="netw" onmousedown="dt.ext.decNetSize()">&#11015;</button>
+            <button class="pool" onmousedown="dt.ext.decIP()">&#9660;</button>
+            <button class="netw" onmousedown="dt.ext.decNetSize()">&#9660;</button>
         </div>
         <hr>
         <table>

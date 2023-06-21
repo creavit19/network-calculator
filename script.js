@@ -58,6 +58,15 @@ var dt = {
             }
             return dt.fns.numAddrToStr( numAddr );
         },
+        checkP: function (fl, e) {
+            if ( !((e.keyCode >= 48 && e.keyCode <= 57)
+                || (e.keyCode >= 37 && e.keyCode <= 40)
+                || (e.keyCode == 8)
+                || (e.keyCode == 9)
+                || (e.keyCode == 13)) ) {
+                e.preventDefault();
+            }
+        },
         check: function (fl, max) {
             if ( !(fl.value === "") ) {
                 fl.value = Number(fl.value);
@@ -74,7 +83,7 @@ var dt = {
             if ( fl.value == "" ) {
                 fl.oldValue = fl.value = 0;
             }
-        }
+        },
     },
     ext: {
         incNetSize: function () {
@@ -115,6 +124,11 @@ var dt = {
 for ( let i = 0; i <= 3; i++ ) {
     dt.els.okt[i] = document.getElementById("ip" + String(i));
     dt.els.okt[i].oldValue = dt.els.okt[i].value;
+    dt.els.okt[i].onkeydown = function (e) {
+        const n = i;
+        dt.fns.checkP(dt.els.okt[n], e);
+        dt.render();
+    }
     dt.els.okt[i].oninput = function () {
         const n = i;
         dt.fns.check(dt.els.okt[n], 255);
@@ -126,6 +140,10 @@ for ( let i = 0; i <= 3; i++ ) {
         dt.render();
     }
 }
+dt.els.inpNetSize.onkeydown = function (e) {
+    dt.fns.checkP(dt.els.inpNetSize, e);
+    dt.render();
+}
 dt.els.inpNetSize.oninput = function () {
     dt.fns.check(dt.els.inpNetSize, 32);
     dt.render();
@@ -135,3 +153,4 @@ dt.els.inpNetSize.onchange = function () {
     dt.render();
 }
 dt.els.inpNetSize.oldValue = dt.els.inpNetSize.value;
+dt.render();

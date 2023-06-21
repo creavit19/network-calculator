@@ -45,25 +45,40 @@ html body :focus-visible {
 
 body {
     font-family: Roboto, sans-serif;
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 50px;
+    line-height: 60px;
     color: var(--color-text);
     width: 100%;
     background-color: var(--color-back);
 }
 
-@media(max-width:600px) {
+.wrap {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media(max-height:1000px) {
+    body {
+        font-size: 4.5vh;
+        line-height: 5.4vh;
+    }
+    
+    .wrap {
+        max-width: 90vh;
+    }
+}
+
+@media(max-width:1000px) {
     body {
         font-size: 5vw;
         line-height: 6vw;
     }
-}
-
-.wrap {
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    
+    .wrap {
+        max-width: 100vw;
+    }
 }
 
 h1 {
