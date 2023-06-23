@@ -14,11 +14,11 @@
             <button class="netw" onmousedown="dt.ext.incNetSize()">&#9650;</button>
         </div>
         <form>
-            <input type="number" id="ip3" value="192" maxlength="3"> .
-            <input type="number" id="ip2" value="168" maxlength="3"> .
-            <input type="number" id="ip1" value="0" maxlength="3"> .
-            <input type="number" id="ip0" value="1" maxlength="3"> /
-            <input type="number" id="netSize" value="24" maxlength="2">
+            <input type="number" id="ip3" value="192" min="0" max="255" step="1"> .
+            <input type="number" id="ip2" value="168" min="0" max="255" step="1"> .
+            <input type="number" id="ip1" value="0" min="0" max="255" step="1"> .
+            <input type="number" id="ip0" value="1" min="0" max="255" step="1"> /
+            <input type="number" id="netSize" value="24" min="0" max="32" step="1">
         </form>
         <div class="control">
             <button class="pool" onmousedown="dt.ext.decIP()">&#9660;</button>
